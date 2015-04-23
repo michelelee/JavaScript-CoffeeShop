@@ -47,18 +47,34 @@
 
     // Set these 3 variables to their DOM elements
 
-    var myImage;
-    var myRevenueMessage;
+    var myImage = document.getElementById("coffee_image");
+
+    myImage.setAttribute('src', 'static/coffee_beans.jpg')
+
+    var myRevenueMessage = document.getElementById("revenue");
 
     // use this dictionary in further study step
 
-    var prices = {
-        "brew": 2.05,
-        "espresso": 3.25,
-        "latte": 4.15,
-        "hot chocolate": 2.50
-    };
+    function makeCoffee(evt) {
+        myImage.setAttribute('src', 'static/coffee_mug.jpg')
+           setTimeout(function () {
+            myImage.setAttribute('src', 'static/coffee_machine.jpg')}, 0)
+           setTimeout(function(){
+            myImage.setAttribute('src', 'static/coffee_beans.jpg')}, 500)
+    }
+    myImage.addEventListener('click', makeCoffee);
 
+
+    var prices = {
+            "brew": 2.05,
+            "espresso": 3.25,
+            "latte": 4.15,
+            "hot chocolate": 2.50
+        };
+    // function coffeeMachine() {
+    //     myImage.setAttribute('src', 'static/coffee_machine.jpg')
+    // }
+    // myImage.addEventListener('click', coffeeMachine)
 
 </script>
 
